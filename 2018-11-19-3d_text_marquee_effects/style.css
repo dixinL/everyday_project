@@ -1,0 +1,82 @@
+/*
+white-space         用来固定段落文字换不换行
+perspective         视觉距离
+transform-origin    翻转位置
+animation-delay     延迟动画时间
+outline             firefox的块锯齿
+*/
+html,
+body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: navajowhite;
+}
+.box{
+    display: flex;
+}
+.box .inner{
+    width: 400px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 50px;
+    font-family: "Microsoft YaHei UI";
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    outline:1px solid transparent;
+}
+.box .inner:first-child{
+    background-color: indianred;
+    color: darkred;
+    transform-origin: right;
+    transform: perspective(100px) rotateY(-15deg);
+}
+.box .inner:last-child{
+    background-color: lightcoral;
+    color: antiquewhite;
+    transform-origin: left;
+    transform: perspective(100px) rotateY(15deg);
+}
+.box .inner span{
+    position: absolute;
+    animation: animas 5s linear infinite;
+}
+.box .inner:first-child span{
+    animation-delay: 2.5s;
+    /*left用来隐藏第一轮显示的内容*/
+    left: -100%;
+}
+@keyframes animas {
+    from{
+        left: 100%;
+    }
+    to{
+        left: -100%;
+    }
+}
+@-moz-keyframes animas {
+    from{
+        left: 100%;
+    }
+    to{
+        left: -100%;
+    }
+}
+@-o-keyframes animas {
+    from{
+        left: 100%;
+    }
+    to{
+        left: -100%;
+    }
+}
+@-webkit-keyframes animas {
+    from{
+        left: 100%;
+    }
+    to{
+        left: -100%;
+    }
+}

@@ -1,0 +1,62 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, darkblue, lightskyblue);
+}
+.card{
+    width: 80vmin;
+    background: linear-gradient(to bottom, #0C0C0C, #565656);
+    color: #fff;
+    box-sizing: border-box;
+    padding: 3vmin 5vmin;
+    letter-spacing: 1vmin;
+    box-shadow: -5vmin 8vmin 20vmin rgba(0, 0, 0, 0.8);
+    border-radius: 3vmin;
+}
+.card h2{
+    text-transform: uppercase;
+    padding: 0 5vmin;
+}
+.card .skill{
+    height: 12vmin;
+    border-radius: 1vmin;
+}
+.card .skill:hover{
+background: #ababab;
+}
+.card .skill span{
+    display: block;
+    padding: 1vmin 3vmin;
+}
+.card .skill .level{
+    text-align: right;
+    position: relative;
+    top: -5vmin;
+}
+.card .skill .level::after{
+    content: '';
+    position: absolute;
+    top: 6vmin;
+    left: 3vmin;
+    width: 90%;
+    height: 3vmin;
+    border: 0.1vmin solid rosybrown;
+    border-radius: 0.2vmin;
+    background-image: linear-gradient(to right, mediumspringgreen, mediumspringgreen);
+    background-repeat: no-repeat;
+    background-position: top 0.1vmin left 0.1vmin;
+}
+.card .skill.first .level::after {
+    background-size: 90% 2.6vmin;
+}
+.card .skill.second .level::after {
+    background-size: 60% 2.6vmin;
+}
+.card .skill.third .level::after {
+    background-size: 80% 2.6vmin;
+}

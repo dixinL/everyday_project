@@ -1,0 +1,91 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #282828;
+    color: whitesmoke;
+}
+.box{
+    width: 220px;
+    height: 50px;
+    font-size: 50px;
+    font-family: "Microsoft YaHei UI";
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+    transform: scale(1.5,1.5);
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+    transition: 1s;
+}
+.box:hover{
+    -webkit-filter: blur(0.2px);
+    -moz-filter: blur(0.2px);
+    -o-filter: blur(0.2px);
+    -ms-filter: blur(0.2px);
+    filter: blur(0.2px);
+}
+.box::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    border-radius: 50%;
+    position: absolute;
+    top: -26px;
+    left: 59px;
+    opacity: 0;
+    transition: 1s;
+}
+.box2{
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+    border-radius: 50%;
+    position: absolute;
+    top: -1px;
+    left: 84px;
+    opacity: 0;
+    transition: 1s;
+}
+.box span:not(:first-child) {
+    position: absolute;
+    background-color: red;
+    opacity: 0;
+    transition: 1s;
+}
+.box span.top,
+.box span.bottom {
+    width: 1px;
+    height: 100px;
+    left: 109.5px;
+}
+.box span.top {
+    top: -76px;
+}
+.box span.bottom {
+    bottom: -77px;
+}
+.box span.left,
+.box span.right {
+    width: 100px;
+    height: 1px;
+    top: 25px;
+}
+.box span.left {
+    left: 8.5px;
+}
+.box span.right {
+    right: 8.5px;
+}
+.box:hover::after,
+.box:hover .box2,
+.box:hover span:not(:first-child) {
+    opacity: 1;
+}

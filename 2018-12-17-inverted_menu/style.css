@@ -1,0 +1,59 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,silver,white);
+}
+nav ul{
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li{
+    font-size: 6vmax;
+    font-family: Arial;
+    background-color: white;
+    border: 2px solid black;
+    padding: 0;
+    letter-spacing: 0.2vmax;
+    width: 25vmax;
+    height: 8vmax;
+    line-height: 8vmax;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin: 1vmax;
+    cursor: pointer;
+}
+nav li span{
+    color: white;
+    mix-blend-mode: difference;
+}
+nav ul li::before{
+    content: '';
+    position: absolute;
+    width: 8vmax;
+    height: inherit;
+    background-color: black;
+    border-radius: 35% / 50%;
+    top: 0;
+    left: -4vmax;
+    transition: 0.5s ease-out;
+}
+nav ul li:hover::before{
+    transform: scale(7);
+}
+.center{
+    font-family: "Microsoft YaHei UI";
+    font-size: 1.4vmax;
+    margin-top: 5vh;
+    text-align: center;
+    width: 30vmax;
+}
+.center a{
+    color: #CC0099;
+    cursor: pointer;
+}

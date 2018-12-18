@@ -1,0 +1,75 @@
+/*
+    :not()      //排除某元素
+    //多个元素
+    :not():not()
+    :root
+*/
+html,
+body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: skyblue;
+}
+
+:root {
+    --color1: deepskyblue;
+    --color2: steelblue;
+    --color3: royalblue;
+    --color4: dodgerblue;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    transform: rotate(45deg);
+}
+
+.box span {
+    border-width: 50px;
+    border-style: solid;
+    border-color: deepskyblue steelblue royalblue dodgerblue;
+    border-color: var(--color1) var(--color2) var(--color3) var(--color4);
+}
+.box span:first-child{
+    visibility:hidden;
+}
+.box span:nth-child(2),.box span:nth-child(4){
+    border-color: transparent steelblue royalblue transparent;
+    border-color: transparent var(--color2) var(--color3) transparent;
+}
+.box span:not(.c2):not(.c4){
+    animation: animate 2s linear infinite;
+}
+@keyframes animate {
+    0% {
+        border-color: deepskyblue steelblue royalblue dodgerblue;
+    }
+
+    25% {
+        border-color: dodgerblue deepskyblue steelblue royalblue;
+    }
+
+    50% {
+        border-color: royalblue dodgerblue deepskyblue steelblue;
+    }
+
+    75% {
+        border-color: steelblue royalblue dodgerblue deepskyblue;
+    }
+
+    100% {
+        border-color: deepskyblue steelblue royalblue dodgerblue;
+    }
+}
+.center{
+    font-family: "Microsoft YaHei UI";
+    margin-top: 15vh;
+    text-align: center;
+    width: 300px;
+}
+.center a{
+    color: white;
+    cursor: pointer;
+}

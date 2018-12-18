@@ -1,0 +1,45 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #282828;
+}
+.circle{
+    width: 20vmin;
+    height: 20vmin;
+    background-color: lime;
+
+    box-shadow: 0 0 0 6vmin #282828, 0 0 0 10vmin lime;
+    border-radius: 50%;
+    position: relative;
+    top: -8vmin;
+}
+.circle::before,
+.circle::after{
+    content: '';
+    position: absolute;
+    top: -10vmin;
+    left: -10vmin;
+    width: 36vmin;
+    height: 36vmin;
+    border: 2vmin solid lime;
+    border-radius: 50%;
+    animation: animas 2.6s ease-out infinite;
+}
+.circle::after{
+    animation-delay: 1s;
+}
+@keyframes animas {
+    from {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}

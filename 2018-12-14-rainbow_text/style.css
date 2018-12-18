@@ -1,0 +1,79 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,darkgray,white);
+}
+.rainbow{
+    color: transparent;
+    font-size: 20vmax;
+    text-transform: uppercase;
+    font-family: Arial;
+    font-weight: bolder;
+    line-height: 20vmax;
+    position: relative;
+}
+.rainbow span::before,
+.rainbow span::after{
+    content: 'QAQ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: animas 2s infinite alternate;
+}
+.rainbow span:nth-child(1)::before{
+    color: red;
+    z-index: 1;
+    height: 100%;
+    animation-delay: 1.05s;
+}
+.rainbow span:nth-child(1)::after{
+    color: orange;
+    z-index: 2;
+    height: 77%;
+    animation-delay: 0.9s;
+}
+.rainbow span:nth-child(2)::before{
+    color: yellow;
+    z-index: 3;
+    height: 66%;
+    animation-delay: 0.75s;
+}
+.rainbow span:nth-child(2)::after{
+    color: green;
+    z-index: 4;
+    height: 55%;
+    animation-delay: 0.6s;
+}
+.rainbow span:nth-child(3)::before{
+    color: cyan;
+    z-index: 5;
+    height: 44%;
+    animation-delay: 0.45s;
+}
+.rainbow span:nth-child(3)::after{
+    color: blue;
+    z-index: 6;
+    height: 33%;
+    animation-delay: 0.3s;
+}
+.rainbow span:nth-child(4)::before{
+    color: purple;
+     z-index: 7;
+     height: 22%;
+    animation-delay: 0.15s;
+}
+@keyframes animas {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
