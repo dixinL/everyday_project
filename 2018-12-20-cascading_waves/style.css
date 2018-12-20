@@ -1,0 +1,68 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,silver,whitesmoke);
+}
+.sea{
+    width: 60vmin;
+    height: 60vmin;
+    background-color: whitesmoke;
+    background: linear-gradient(darkblue,rgba(255, 255, 255, 0) 80%,rgba(255, 255, 255, 1));
+    border-radius: 5vmin;
+    box-shadow: 0 1vmin 10vmin rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+}
+.sea p{
+    color: white;
+    font-family: Arial;
+    font-size: 6vmin;
+    text-align: center;
+    line-height: 30vmin;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+.sea p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 0.4vmin;
+    font-weight: bolder;
+}
+.sea p:nth-child(2){
+    top: 12vmin;
+}
+.sea .wave{
+    position: absolute;
+    top: -70vmin;
+    left: -30vmin;
+    width: 120vmin;
+    height: 120vmin;
+    background: deepskyblue;
+    border-radius: 40%;
+    opacity: 0.5;
+    animation: animas linear infinite;
+    transform-origin: 49.5% 49.5%;
+}
+.sea .wave:nth-of-type(1){
+    animation-duration: 7s;
+}
+.sea .wave:nth-of-type(2){
+    animation-delay: -9s;
+    animation-duration: 13s;
+}
+.sea .wave:nth-of-type(3){
+    animation-delay: -5s;
+    animation-duration: 17s;
+    background: orangered;
+    opacity: 0.2;
+}
+@keyframes animas {
+    from {
+        transform: rotate(360deg);
+    }
+}
