@@ -1,0 +1,81 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,#000,#787878);
+}
+.loader{
+    width: 60vmin;
+    height: 60vmin;
+    font-size: 5vmin;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader .comet{
+    position: absolute;
+    border-radius: 50%;
+    border-style: solid;
+    animation: animas 3s linear infinite;
+}
+.loader .comet:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: gold;
+    border-color: currentColor transparent transparent currentColor;
+    border-width: 0.2em 0.2em 0 0;
+    animation-direction: normal;
+}
+.loader .comet:nth-child(2) {
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    color: lime;
+    border-color: currentColor currentColor transparent transparent;
+    border-width: 0.2em 0 0 0.2em;
+    animation-direction: reverse;
+}
+.loader .comet .rotate {
+    position: absolute;
+    width: 50%;
+    height: 0.1em;
+    top: 50%;
+    left: 50%;
+    background-color: transparent;
+    transform-origin: left;
+}
+.loader .comet:nth-child(1) .rotate{
+    transform: rotate(-45deg);
+}
+.loader .comet:nth-child(2) .rotate{
+    transform: rotate(-135deg);
+}
+.loader .comet .rotate::before {
+    position: absolute;
+    top: -0.6em;
+    right: -0.6em;
+    content: '';
+    width: 0.8em;
+    height: 0.8em;
+    background-color: currentColor;
+    border-radius: 50%;
+    box-shadow: 0 0 1em currentColor,
+    0 0 2em currentColor,
+    0 0 3em currentColor,
+    0 0 4em currentColor,
+    0 0 5em currentColor,
+    0 0 0 0.5em rgba(255, 255, 0, 0.1);
+}
+@keyframes animas {
+    to{
+        transform: rotate(1turn);
+    }
+}
