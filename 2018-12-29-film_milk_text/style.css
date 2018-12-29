@@ -1,0 +1,58 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+.milk{
+    filter: contrast(10);
+    background-color: black;
+    overflow: hidden;
+}
+p{
+    color: white;
+    font-size: 10vmin;
+    line-height: 14vmin;
+    font-weight: bold;
+    font-family: Arial;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    animation: show-hide 15s infinite;
+    filter: opacity(0);
+}
+p:nth-child(1) {
+    transform: translateY(34vmin);
+    animation-direction: normal;
+}
+
+p:nth-child(2) {
+    transform: translateY(6vmin);
+    animation-direction: normal;
+    animation-delay: 5s;
+}
+p:nth-child(3) {
+    transform: translateY(-36vmin);
+    animation-direction: normal;
+    animation-delay: 10s;
+}
+@keyframes show-hide {
+    0% {
+        filter: opacity(0) blur(1vmin);
+    }
+    38% {
+        filter: opacity(1) blur(0.3vmin);
+        letter-spacing: 0.24em;
+    }
+    50%{
+        filter: opacity(0) blur(1vmin);
+        letter-spacing: 0.24em;
+    }
+    100% {
+        filter: opacity(0);
+    }
+}
