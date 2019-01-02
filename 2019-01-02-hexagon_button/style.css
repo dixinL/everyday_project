@@ -1,0 +1,85 @@
+body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,silver,white);
+}
+nav ul{
+    padding: 0;
+}
+nav ul li{
+    list-style-type: none;
+    font-family: serif;
+    font-size: 6vmin;
+    font-weight: bold;
+    text-align: center;
+    color: whitesmoke;
+    margin: 5vmin;
+    float: left;
+    position: relative;
+}
+nav ul li:nth-child(1){
+    width: 22.5vmin;
+    height: 15vmin;
+    background-color: #ef3f52;
+    line-height: 15vmin;
+}
+nav ul li:nth-child(2){
+    width: 26vmin;
+    height: 15vmin;
+    background-color: #09f16a;
+    line-height: 15vmin;
+}
+nav ul li:nth-child(3){
+    width: 29vmin;
+    height: 15vmin;
+    background-color: #01AAED;
+    line-height: 15vmin;
+}
+nav ul li::before,
+nav ul li::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.3s;
+}
+nav ul li:nth-child(1)::before,
+nav ul li:nth-child(1)::after{
+    background-color: #ef3f52;
+}
+nav ul li:nth-child(2)::before,
+nav ul li:nth-child(2)::after{
+    background-color: #09f16a;
+}
+nav ul li:nth-child(3)::before,
+nav ul li:nth-child(3)::after{
+    background-color: #01AAED;
+}
+nav ul li::before{
+    transform: rotate(60deg) translateX(-30vmin);
+}
+nav ul li::after{
+    transform: rotate(-60deg) translateX(30vmin);
+    transition-delay: 0.1s;
+}
+nav ul li:hover{
+    text-shadow: -0.05vmin -0.2vmin 0 rgba(255, 255, 255, 0.4),
+    0.05vmin 0.2vmin 0 rgba(0, 0, 0, 0.7);
+}
+nav ul li:hover::before{
+    opacity: 1;
+    transform: rotate(60deg) translateX(0);
+}
+nav ul li:hover::after{
+    opacity: 1;
+    transform: rotate(-60deg) translateX(0);
+}
