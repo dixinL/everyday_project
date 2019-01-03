@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg,#11d161,#1DA3DA);
+    font-size: 3vmin;
+}
+.panda{
+    width: 22em;
+    height: 16em;
+    background-color: white;
+    background-image:
+            radial-gradient(ellipse at 50% 60%,#333 1.2em,transparent 1.21em),
+            radial-gradient(ellipse 0.9em 0.8em at 50% 80%,#555 0.9em,transparent 0.93em);
+    border: 0.5em solid #333;
+    border-radius: 11em / 11em 11em 6em 6em;
+    border-bottom-width: 0.8em;
+    box-shadow: inset 1em -1em 0 #eee;
+    position: relative;
+}
+.panda::before,
+.panda::after{
+    content: '';
+    position: absolute;
+    width: 7em;
+    height: 4em;
+}
+.panda::before{
+    left: 2.9em;
+    top: 5.5em;
+    background-color: #333;
+    border-radius: 50% 50% 45% 42%;
+    transform: rotate(-45deg);
+    box-shadow: 1em -7.2em 0 -0.3em #333;
+    background-image:
+            radial-gradient(circle at 5em 2em,white 0.4em,transparent 0.42em),
+            radial-gradient(circle at 4.6em 2em, #333 0.9em, transparent 0.92em),
+            radial-gradient(circle at 4.5em 2em, white 1.2em, transparent 1.22em);
+}
+.panda::after{
+    right: 2.9em;
+    top: 5.5em;
+    background-color: #333;
+    border-radius: 50% 50% 45% 42%;
+    transform: rotate(45deg);
+    box-shadow: -1em -7.2em 0 -0.3em #333;
+    background-image:
+            radial-gradient(circle at 2.4em 1.6em,white 0.4em,transparent 0.42em),
+            radial-gradient(circle at 2.4em 2em, #333 0.9em, transparent 0.92em),
+            radial-gradient(circle at 2.5em 2em, white 1.2em, transparent 1.22em);
+}
