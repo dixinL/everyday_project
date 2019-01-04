@@ -1,0 +1,136 @@
+body{
+    margin: 0;
+    font-size: 2vmin;
+}
+.sky{
+    width: 100vw;
+    height: 100vh;
+    background: skyblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: sky 10s linear infinite;
+    position: relative;
+    overflow: hidden;
+    z-index: -2;
+}
+.sun{
+    width: 15em;
+    height: 15em;
+    background-color: gold;
+    border-radius: 50%;
+    animation: sun 10s linear infinite;
+}
+.moon{
+    position: relative;
+    width: 14em;
+    height: 14em;
+    left: -14.5em;
+}
+.moon::before{
+    content: '';
+    position: absolute;
+    width: 10em;
+    height: 10em;
+    margin: 2em;
+    background-color: slategray;
+    border-radius: 50%;
+    transform: translateX(-25em);
+    animation: moon 10s linear infinite;
+    opacity: 0;
+}
+.moon::after{
+    content: '';
+    position: absolute;
+    width: 10em;
+    height: 10em;
+    margin: 2em;
+    background-color: slategray;
+    border-radius: 50%;
+    transform: translateX(25em);
+    z-index: -1;
+    animation: moon2 10s linear infinite;
+}
+@keyframes sky {
+    25%{
+        background-color: black;
+    }
+    75%{
+        background-color: skyblue;
+    }
+}
+@keyframes sun {
+    25%{
+        box-shadow: 0 0 5em 1.5em #ffff66;
+    }
+    50%{
+        box-shadow: 0 0 0 0 transparent;
+    }
+    75%{
+        box-shadow: 0 0 0 0 transparent;
+    }
+}
+@keyframes moon {
+    0%{
+        background-color: slategray;
+        opacity: 1;
+        transform: translateX(-25em);
+        width: 12em;
+        height: 12em;
+        margin: 1em;
+    }
+    25%{
+        width: 14em;
+        height: 14em;
+        margin: 0;
+        background-color: black;
+    }
+    50%{
+        width: 12em;
+        height: 12em;
+        margin: 1em;
+        opacity: 1;
+        background-color: slategray;
+        transform: translateX(25em);
+    }
+    51%{
+        opacity: 0;
+        transform: translateX(25em);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(25em);
+    }
+}
+@keyframes moon2 {
+    0%{
+        opacity: 0;
+        transform: translateX(25em);
+    }
+    49%{
+        opacity: 0;
+        transform: translateX(25em);
+    }
+    50%{
+        width: 12em;
+        height: 12em;
+        margin: 1em;
+        background-color: slategray;
+        opacity: 1;
+        transform: translateX(25em);
+    }
+    75%{
+        width: 10em;
+        height: 10em;
+        margin: 2em;
+        background-color: whitesmoke;
+    }
+    100%{
+        width: 12em;
+        height: 12em;
+        margin: 1em;
+        background-color: slategray;
+        opacity: 1;
+        transform: translateX(-25em);
+    }
+}
