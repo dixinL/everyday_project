@@ -1,3 +1,8 @@
+/*
+    IE中无法使用transform来2d变换
+    测试后发现translate中的值单位为vmin
+    页面的最小值改变会影响它的值，出现未知错误
+*/
 body{
     margin: 0;
     font-size: 2vmin;
