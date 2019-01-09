@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #232323;
+}
+.ladder p{
+    color: white;
+    font-size: 9vmin;
+    font-family: "Microsoft YaHei UI";
+    font-weight: bold;
+    margin: 0;
+    height: 1.2em;
+    overflow: hidden;
+    position: relative;
+    left: -0.8em;
+}
+.ladder p:nth-child(odd){
+    transform: skewY(-30deg) skewX(45deg) scaleY(1.32);
+}
+.ladder p:nth-child(even){
+    transform: skewY(-30deg) scaleY(1.4);
+}
+.ladder p:nth-child(2) {
+    margin-left: 1.6em;
+}
+.ladder p:nth-child(3) {
+    margin-left: 3.2em;
+}
+.ladder p span {
+    display: block;
+    text-align: center;
+    line-height: 1.2em;
+    animation: lettering 5s infinite ease-in-out alternate;
+}
+
+@keyframes lettering {
+    to {
+        transform: translateY(-100%);
+    }
+}
