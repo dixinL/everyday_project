@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center,#000099,#000022);
+}
+.heart{
+    font-size: 2vmin;
+    width: 14em;
+    height: 11em;
+    display: flex;
+    justify-content: space-between;
+}
+.heart span{
+    width: 1em;
+    border-radius: 0.5em;
+    position: relative;
+    animation: heart 5s infinite;
+}
+.heart span:nth-child(1),
+.heart span:nth-child(9){
+    background: orangered;
+    height: 4em;
+    top: 2.8em;
+}
+.heart span:nth-child(2),
+.heart span:nth-child(8){
+    background: gold;
+    height: 7em;
+    top: 1.4em;
+}
+.heart span:nth-child(3),
+.heart span:nth-child(7){
+    background: green;
+    height: 9.4em;
+    top: 0.6em;
+}
+.heart span:nth-child(4),
+.heart span:nth-child(6){
+    background: skyblue;
+    height: 10em;
+    top: 1.4em;
+}
+.heart span:nth-child(5){
+    background: purple;
+    height: 10.4em;
+    top: 2.4em;
+}
+@keyframes heart {
+    0%{
+        filter: blur(0);
+        width: 1em;
+    }
+    40%{
+        top: 25%;
+        height: 50%;
+        background-color: lightblue;
+        filter: blur(0.5em);
+        width: 0;
+    }
+    80%{
+        filter: blur(0);
+        width: 1em;
+    }
+    100%{
+        filter: blur(0);
+        width: 1em;
+    }
+}
