@@ -3,6 +3,8 @@
 但IE浏览器不支持transform3D变换，导致记事本行翻页后仍会显示，
 解决办法：对每一行单独添加动画（这会让代码变得很长），当翻页动画执行时，
     设置行的boeder和background-color为transparent，用户既无法看见行
+
+另：transform+backface-visibility属性在IE浏览器中表现不佳，原因不明
 */
 body{
     margin: 0;
