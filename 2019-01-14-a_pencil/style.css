@@ -1,0 +1,64 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right,#7a6974,#454995);
+}
+.pencil{
+    position: absolute;
+    width: 50em;
+    height: 3.5em;
+    font-size: 2vmin;
+    filter: drop-shadow(0.5em 1em 0.8em gray);
+}
+.pencil .penbody{
+    position: absolute;
+    left: 4em;
+    background-color: green;
+    border-top: 1em solid forestgreen;
+    border-bottom: 1em solid darkgreen;
+    color: goldenrod;
+    line-height: 1.68em;
+    letter-spacing: 0.2em;
+    padding-left: 30em;
+    padding-right: 5em;
+}
+.pencil .written::before,
+.pencil .written::after{
+    content: '';
+    position: absolute;
+    left: -8em;
+    border-style: solid;
+    border-width: 1.8em 6em;
+}
+.pencil .written::before{
+    border-color: transparent burlywood transparent transparent;
+}
+.pencil .written::after{
+    border-color: transparent black transparent transparent;
+    transform: scale(0.3);
+}
+.pencil .eraser {
+    position: absolute;
+    right: 0;
+    width: 6em;
+    height: 1.6em;
+    background-color: lightpink;
+    border-top: 1em solid pink;
+    border-bottom: 1em solid lightcoral;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+.pencil .eraser::before {
+    content: '';
+    position: absolute;
+    top: -1em;
+    left: 0;
+    width: 1.5em;
+    height: 1.6em;
+    background-color: silver;
+    border-top: 1em solid lightgray;
+    border-bottom: 1em solid gray;
+}
