@@ -77,9 +77,10 @@ body{
 }
 .ticket{
     background: #F39B00;
-    background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 5px, #F39B00 5px);
+    background: radial-gradient(rgba(0, 0, 0, 0) 5px, #F39B00 5px);
     background-size: 15px 15px;
     background-position: 9px 3px;
 }
-.ticket{background: #F39B00;background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 5px, #F39B00 5px);background-size: 15px 15px;background-position: 9px 3px;}
-.ticket:before{background-color:#F39B00;}
+.ticket:before{
+    background-color:#F39B00;
+}
