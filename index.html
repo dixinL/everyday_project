@@ -80,19 +80,7 @@
 				{ field: 'author', title: 'Author', width: '15%', align: 'center' }
 			]],
 			url: 'data.json', //数据接口
-			parseData: function (res) { //res 即为原始返回的数据
-				console.log(table);
-				return {
-					"code": res.code, //解析接口状态
-					"msg": res.msg, //解析提示文本
-					"count": res.count, //解析数据长度
-					"data": res.data //解析数据列表
-				};
-			},
-			request: {
-				pageName: 'page' //页码的参数名称，默认：page
-				, limitName: 'limit' //每页数据量的参数名，默认：limit
-			},
+
 			response: {
 				statusName: 'code' //规定数据状态的字段名称，默认：code
 				, statusCode: 0 //规定成功的状态码，默认：0
@@ -100,6 +88,23 @@
 				, countName: 'count' //规定数据总数的字段名称，默认：count
 				, dataName: 'data' //规定数据列表的字段名称，默认：data
 			},
+			  done: function(res, curr, count){
+			    //如果是异步请求数据方式，res即为你接口返回的信息。
+			    //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+			    console.log(res);
+
+			    //得到当前页码
+			    console.log(curr); 
+
+			    //得到数据总量
+			    console.log(count);
+				  return {
+					"code": res.code, //解析接口状态
+					"msg": res.msg, //解析提示文本
+					"count": res.count, //解析数据长度
+					"data": res.data.slice((curr - 1) * 20, curr * 20) //解析数据列表
+				};
+			  },
 			autoSort: false, //禁用前端自动排序。注意：该参数为 layui 2.4.4 新增
 			page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
 				layout: ['prev', 'page', 'next', 'count'], //自定义分页布局
