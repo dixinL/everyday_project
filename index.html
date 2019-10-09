@@ -77,7 +77,7 @@
 			cols: [[ //表头
 				{ field: 'id', title: 'ID', type: 'numbers', width: '10%', align: 'right' },
 				{ field: 'title', title: 'Title', width: '75%', align: 'center' },
-				{ field: 'author', title: 'Author', width: '15%', align: 'center' }
+				{ field: 'author', title: 'Author', align: 'center' }
 			]],
 			url: 'data.json', //数据接口
 			parseData: function (res) { //res 即为原始返回的数据
@@ -107,7 +107,7 @@
 				limit: 20,
 				hash: true
 			},
-
+			skin: "nob"
 		});
 
 		//监听行单击事件（单击事件为：rowDouble）
