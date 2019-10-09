@@ -81,17 +81,7 @@
 			]],
 			url: 'data.json', //数据接口
 parseData: function (res) { //res 即为原始返回的数据
-				done: function(res, curr, count){
-    //如果是异步请求数据方式，res即为你接口返回的信息。
-    //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
-    console.log(res);
-    
-    //得到当前页码
-    console.log(curr); 
-    
-    //得到数据总量
-    console.log(count);
-  }
+	done();
 				return {
 					"code": res.code, //解析接口状态
 					"msg": res.msg, //解析提示文本
@@ -106,6 +96,17 @@ parseData: function (res) { //res 即为原始返回的数据
 				, countName: 'count' //规定数据总数的字段名称，默认：count
 				, dataName: 'data' //规定数据列表的字段名称，默认：data
 			},
+							done: function(res, curr, count){
+    //如果是异步请求数据方式，res即为你接口返回的信息。
+    //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+    console.log(res);
+    
+    //得到当前页码
+    console.log(curr); 
+    
+    //得到数据总量
+    console.log(count);
+  }
 			autoSort: false, //禁用前端自动排序。注意：该参数为 layui 2.4.4 新增
 			page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
 				layout: ['prev', 'page', 'next', 'count'], //自定义分页布局
