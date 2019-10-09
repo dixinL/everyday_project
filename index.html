@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="SHORTCUT ICON" href="../image/dixinl.ico" />
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/mdui/0.4.2/css/mdui.min.css">
+	<!-- 引入组件库 -->
+	<script src="layui/layui.js"></script>
+	<link rel="stylesheet" href="layui/css/layui.css">
+	<title>form</title>
+	<style>
+		body {
+			font-size: 5vmin;
+		}
+
+		#nav {
+			text-align: center;
+		}
+
+		p {
+			font-size: 5vmin;
+			margin: 2.4vmin;
+		}
+
+		span {
+			font-size: 2.8vmin !important;
+		}
+
+		a {
+			font-size: 2.8vmin !important;
+		}
+
+		.layui-table td {
+			font-size: 3vmin;
+			padding: 1vmin 0 !important;
+		}
+
+		.layui-table tbody tr:hover,
+		.layui-table hover {
+			background-color: #1aff66 !important;
+		}
+
+		.layui-laypage-count {
+			margin-left: 3vmin !important;
+			padding: 0;
+		}
+
+		.layui-table-page .layui-laypage {
+			position: relative;
+			left: 40%;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<div id="nav">
+			<p>项目列表</p>
+		</div>
+		<div style="padding: 10px">
+			<table id="tab" class="layui-hide" lay-filter="test" style="font-size: 30px"></table>
+		</div>
+	</div>
+</body>
+<script>
+	layui.use('table', function () {
+		var table = layui.table;
+
+		//第一个实例
+		table.render({
+			elem: '#tab',
+			title: '项目列表',
+			even: true,
+			cols: [[ //表头
+				{ field: 'id', title: 'ID', type: 'numbers', width: '10%', align: 'right' },
+				{ field: 'title', title: 'Title', width: '75%', align: 'center' },
+				{ field: 'author', title: 'Author', width: '15%', align: 'center' }
+			]],
+			url: 'data.json', //数据接口
+			response: {
+				statusName: 'code' //规定数据状态的字段名称，默认：code
+				, statusCode: 0 //规定成功的状态码，默认：0
+				, msgName: 'msg' //规定状态信息的字段名称，默认：msg
+				, countName: 'count' //规定数据总数的字段名称，默认：count
+				, dataName: 'data' //规定数据列表的字段名称，默认：data
+			},
+			autoSort: false, //禁用前端自动排序。注意：该参数为 layui 2.4.4 新增
+			page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+				layout: ['prev', 'page', 'next', 'count'], //自定义分页布局
+				groups: 5, //只显示 5 个连续页码
+				first: false, //不显示首页
+				last: false, //不显示尾页
+				limit: 20,
+			},
+
+		});
+
+		//监听行单击事件（单击事件为：rowDouble）
+		table.on('row(test)', function (obj) {
+			var data = obj.data.link;
+			window.open(data);
+
+			//标注选中样式
+			obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
+		});
+
+		//监听排序事件
+		table.on('sort(test)', function (obj) { //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+			console.log(obj.field); //当前排序的字段名
+			console.log(obj.type); //当前排序类型：desc（降序）、asc（升序）、null（空对象，默认排序）
+			console.log(this); //当前排序的 th 对象
+
+			//尽管我们的 table 自带排序功能，但并没有请求服务端。
+			//有些时候，你可能需要根据当前排序的字段，重新向服务端发送请求，从而实现服务端排序，如：
+			table.reload('tab', {
+				initSort: obj //记录初始排序，如果不设的话，将无法标记表头的排序状态。
+				, where: { //请求参数（注意：这里面的参数可任意定义，并非下面固定的格式）
+					field: obj.field //排序字段
+					, order: obj.type //排序方式
+				}
+			});
+			layer.msg('服务端排序	order by ' + obj.field + '	' + obj.type);
+		});
+	});
+
+</script>
+
+</html>
