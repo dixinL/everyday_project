@@ -81,7 +81,7 @@
 			]],
 			url: 'data.json', //数据接口
 			parseData: function (res) { //res 即为原始返回的数据
-				let argsIndex = window.location.href.split("?channel=");
+				let argsIndex = window.location.href.split("true=");
 				let arg = argsIndex[1];
 				console.log(arg);
 				return {
