@@ -60,8 +60,8 @@
 		<div id="nav">
 			<p>项目列表</p>
 		</div>
-		<div style="padding: 10px">
-			<table id="tab" class="layui-hide" lay-filter="test" style="font-size: 30px"></table>
+		<div style="padding: 20px">
+			<table id="tab" class="layui-hide" lay-filter="test" style="font-size: 30px" lay-even lay-skin="nob"></table>
 		</div>
 	</div>
 </body>
@@ -80,6 +80,14 @@
 				{ field: 'author', title: 'Author', width: '15%', align: 'center' }
 			]],
 			url: 'data.json', //数据接口
+			parseData: function (res) { //res 即为原始返回的数据
+				return {
+					"code": res.code, //解析接口状态
+					"msg": res.msg, //解析提示文本
+					"count": res.count, //解析数据长度
+					"data": res.data.slice((page - 1) * limit,page * limit) //解析数据列表
+				};
+			},
 			response: {
 				statusName: 'code' //规定数据状态的字段名称，默认：code
 				, statusCode: 0 //规定成功的状态码，默认：0
