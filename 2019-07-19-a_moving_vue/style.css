@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.vue {
+    width: 6em;
+    height: 6em;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.outer, .medium, .inner{
+    position: absolute;
+    border-style: solid;
+    border-color: transparent;
+    animation: in-and-out 3s linear infinite;
+}
+.outer{
+    border-top-width: 4.9em;
+    border-top-color: #42b883;
+    border-left-width: 3em;
+    border-right-width: 3em;
+}
+.medium{
+    border-top-width: 3.2em;
+    border-top-color: #35495e;
+    border-left-width: 2em;
+    border-right-width: 2em;
+    animation-delay: 0.1s;
+}
+.inner{
+    border-top-width: 1.6em;
+    border-top-color: #fff;
+    border-left-width: 1em;
+    border-right-width: 1em;
+    animation-delay: 0.2s;
+}
+@keyframes in-and-out {
+	0%, 5% {
+		top: -100%;
+	}
+
+	15%, 80% {
+		top: 0;
+		filter: opacity(1);
+		transform: scale(1);
+	}
+
+	90%, 100% {
+		top: 100%;
+		filter: opacity(0);
+		transform: scale(0);
+	}
+}
